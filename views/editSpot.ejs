@@ -1,0 +1,23 @@
+<% include  Partials/header.ejs %>
+	<h2 style="text-align:center; margin-top:20px">Edit <%= spot.name %></h2>
+
+	<div style="width:30% ; margin:20px auto">
+		<form action="/spot/<%= spot._id %>?_method=PUT" method="POST">
+			<div class="form-group">
+				<input class="form-control" type="text" name="spot[name]" value="<%= spot.name %>">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="number" name="spot[budget]" value="<%= spot.budget %>">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="text" name="spot[image]" value="<%= spot.image %>">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="text" name="spot[desc]" value="<%= spot.desc %>">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-dark btn-lg btn-block">Submit!</button>
+			</div>
+		</form>
+		<a href="/spot">Go Back</a>
+	</div>

@@ -1,0 +1,53 @@
+#inline{
+	display:inline;
+}
+
+.img-fluid{
+	width:100%;
+	height:400px;
+}
+
+.comment{
+	background-color: #eef5fd;
+}
+
+.img-thumbnail{
+	margin-top: 20px;
+	padding:0px;
+}
+
+.space{
+	padding:25px;
+}
+
+.padding{
+	padding:10px;
+}
+
+.jumbotron{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.btn-success{
+	margin:10px;
+}
+
+.card-body{
+	padding:1rem;
+}
+
+.lead{
+	margin-top: 20px;
+}
+
+.alert-danger{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.alert-success{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+

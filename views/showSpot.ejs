@@ -1,0 +1,49 @@
+<% include  Partials/header.ejs %> 
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Beautiful Site </p>
+			<div class="img-thumbnail comment">
+				<div class="float-right">
+					<a href="/spot/<%= spot._id %>/comment/new" class="btn btn-success btn-sm">Add Comment</a>
+				</div>
+				<div class="space">
+				</div>
+				<hr>
+				<% spot.comments.forEach(function(comment){ %>
+				<div class="row padding">
+					<div class="col-md-12">
+						<strong><%= comment.author.username %></strong>
+						<span class="float-right"> <%= moment(comment.createdAt).fromNow() %> </span>
+						<p><%= comment.text %></p> 
+						<a href="/spot/<%= spot._id %>/comment/<%= comment._id %>/edit" class="btn btn-outline-dark btn-sm">Edit</a>
+						<form id="inline" method="POST" action="/spot/<%= spot._id %>/comment/<%= comment._id %>?_method=DELETE">
+							<button class="btn btn-sm btn-outline-danger">Delete</button>
+						</form>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+		</div>
+
+
+		<div class="col-md-9">
+			<div class="img-thumbnail thumbnail">
+				<img class="img-fluid rounded mx-auto d-block" src="<%= spot.image %>">
+				<div class="caption padding">
+					<h5 class="float-right">Rs <%= spot.budget %>/day</h5>
+					<h4><a><%= spot.name %></a></h4>
+					<p><%= spot.desc %></p>
+					<h1><%= spot.user %></h1>
+					<em><p>Submitted By <%= spot.author.username %>, <%= moment(spot.createdAt).fromNow() %></p></em>
+					<a href="/spot/<%= spot._id %>/edit" class="btn btn-outline-dark btn-sm">Edit Spot</a>
+					<form method="POST" action="/spot/<%= spot._id %>?_method=DELETE" id="inline">
+						<button class="btn btn-outline-danger btn-sm">Delete Spot</button>
+					</form>
+				</div>
+			</div>	
+		</div>
+	
+
+	</div>
+</div>

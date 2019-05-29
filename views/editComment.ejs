@@ -1,0 +1,14 @@
+<% include  Partials/header.ejs %>
+	<h2 style="text-align:center; margin-top:20px">Edit Comment</h2>
+
+	<div style="width:30% ; margin:20px auto">
+		<form action="/spot/<%= spot_id %>/comment/<%= comment._id %>?_method=PUT" method="POST">
+			<div class="form-group">
+				<input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-dark btn-lg btn-block">Submit!</button>
+			</div>
+		</form>
+		<a href="/spot">Go Back</a>
+	</div>

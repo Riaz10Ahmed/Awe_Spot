@@ -1,0 +1,28 @@
+<% include  Partials/header.ejs %>
+<div class="container">
+	<header class="jumbotron">	
+		<div class="container">
+			<h1>Welcome to Awe Spot!!</h1>
+			<p>---awesome places "handpicked"</p>
+			<p>
+				<a class="btn btn-dark btn-lg" href="/spot/new">Add a Awesome Spot </a>
+			</p>
+		</div>
+	</header>
+
+	<div class="row text-center">
+		<% for(var i=0 ; i<spot.length ; i++){ %>
+		<div class="col-md-3 col-sm-6">
+				<div class="card">
+				  <img src=" <%= spot[i].image %> " class="card-img-top" alt="spot image">
+				  <div class="card-body">
+				    <h5 class="card-title"> <%= spot[i].name %> </h5>
+				    <a href="/spot/<%= spot[i]._id %>" class="btn btn-primary">More Info</a>
+				  </div>
+				</div>
+		</div>
+		<% } %>
+	</div>
+
+</div>
+

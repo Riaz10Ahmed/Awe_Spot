@@ -13,5 +13,5 @@ node modules directory contains the necessary modules implemented in Awe Spot!.
 # Public Dir
 public directory contains the stylesheets.
 
-#Views Dir
+# Views Dir
 views directory contains the ejs files.
